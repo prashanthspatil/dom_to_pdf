@@ -9,7 +9,7 @@ await page.setViewport({width: 1200, height: 800, deviceScaleFactor: 2});
 await page.goto(process.env.URL);
 
 const overlay = await page.$(DIV_ID);
-const screenshot = await overlay.screenshot({path: 'tweet.png'});
+const screenshot = await overlay.screenshot({path: 'document.png'});
 
 await page.setContent(`
     <!DOCTYPE html>
@@ -37,7 +37,7 @@ await page.setContent(`
     </html>
   `);
 
-await page.pdf({path: 'tweet.pdf', printBackground: true});
+await page.pdf({path: 'document.pdf', printBackground: true});
 
 await browser.close();
 
